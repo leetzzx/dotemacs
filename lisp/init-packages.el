@@ -121,7 +121,9 @@
 (with-eval-after-load 'company
   (company-ctags-auto-setup))
 ;;(add-to-list 'company-backends 'company-irony)
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/company-english-helper"))
 
+(require 'company-english-helper)
 
 ;; Yasnippet
 (require 'yasnippet)
