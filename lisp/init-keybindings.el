@@ -15,7 +15,8 @@
 (global-set-key (kbd "<f5>") 'init-file)
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 (global-set-key (kbd "C-=") 'er/expand-region)
-
+(global-set-key (kbd "C-c y") 'ivy-yasnippet)
+(global-set-key (kbd "C-c u") 'yas-expand)
 ;;(with-eval-after-load 'company
 ;;  (define-key company-active-map (kbd "M-n") nil)
 ;;  (define-key company-active-map (kbd "M-p") nil)

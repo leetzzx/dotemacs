@@ -18,6 +18,9 @@
 		      company-c-headers
 		      company-ctags
 		      company-irony
+		      yasnippet
+		      yasnippet-snippets
+		      ivy-yasnippet
 		      ;; --- Better Editor ---
 		      markdown-mode
 		      youdao-dictionary 
@@ -117,6 +120,11 @@
 (with-eval-after-load 'company
   (company-ctags-auto-setup))
 ;;(add-to-list 'company-backends 'company-irony)
+
+
+;; Yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)
 
 
 (provide 'init-packages)
