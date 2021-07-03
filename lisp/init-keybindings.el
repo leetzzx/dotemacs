@@ -10,6 +10,7 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
 (global-set-key (kbd "C-h C-f") 'find-function)
+(global-set-key (kbd "C-c p") #'avy-flycheck-goto-error)
 (global-set-key (kbd "C-h C-v") 'find-variable)
 (global-set-key (kbd "<f7>") 'open-my-GTD-file)
 (global-set-key (kbd "<f5>") 'init-file)

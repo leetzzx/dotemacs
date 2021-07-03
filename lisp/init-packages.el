@@ -29,6 +29,7 @@
 		      swiper
 		      counsel
 		      iedit
+		      avy-flycheck
 		      smartparens
 		      expand-region
 		      ;; --- Major Mode ---
@@ -125,6 +126,9 @@
 ;; Yasnippet
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;; avy-flycheck
+(global-flycheck-mode)
 
 
 (provide 'init-packages)
