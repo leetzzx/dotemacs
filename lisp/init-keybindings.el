@@ -1,5 +1,8 @@
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 (global-set-key (kbd "C-x C-j") 'dired-jump)
-(global-set-key (kbd "C-c v") 'youdao-dictionary-search-at-point+)
+(global-set-key (kbd "C-c v") 'youdao-dictionary-search-at-point-tooltip)
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c C-c") 'browse-url-of-buffer)
 (global-set-key (kbd "C-x r p") 'string-insert-rectangle)
@@ -19,6 +22,7 @@
 (global-set-key (kbd "C-c y") 'ivy-yasnippet)
 (global-set-key (kbd "C-c u") 'yas-expand)
 (global-set-key (kbd "C-c e") 'toggle-company-english-helper)
+
 ;;(with-eval-after-load 'company
 ;;  (define-key company-active-map (kbd "M-n") nil)
 ;;  (define-key company-active-map (kbd "M-p") nil)
@@ -28,3 +32,4 @@
 (js2r-add-keybindings-with-prefix "C-c C-m")
 (global-set-key (kbd "M-s e") 'iedit-mode)
 (provide 'init-keybindings)
+;;; init-keybindings ends here

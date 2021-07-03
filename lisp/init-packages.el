@@ -29,6 +29,7 @@
 		      swiper
 		      counsel
 		      iedit
+		      posframe
 		      avy-flycheck
 		      smartparens
 		      expand-region
@@ -132,6 +133,8 @@
 ;; avy-flycheck
 (global-flycheck-mode)
 
+;; posframe
+(require 'posframe)
 
 (provide 'init-packages)
 
