@@ -17,6 +17,7 @@
 		      company-php
 		      company-c-headers
 		      company-ctags
+		      company-irony
 		      ;; --- Better Editor ---
 		      markdown-mode
 		      youdao-dictionary 
@@ -107,12 +108,17 @@
 (add-to-list 'company-backends 'company-web-html)
 (add-to-list 'company-backends 'company-web-jade)
 (add-to-list 'company-backends 'company-web-slim)
+
+;; c completion
 (add-to-list 'company-backends 'company-c-headers)
 (add-to-list 'company-backends 'company-clang)
 (add-to-list 'company-backends 'company-etags)
 (require 'company-ctags)
 (with-eval-after-load 'company
   (company-ctags-auto-setup))
+;;(add-to-list 'company-backends 'company-irony)
+
+
 (provide 'init-packages)
 
 
