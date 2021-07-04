@@ -24,6 +24,7 @@
 		      ;; --- Better Editor ---
 		      markdown-mode
 		      youdao-dictionary 
+		      org-pomodoro
 		      popwin
 		      magit
 		      swiper
@@ -126,13 +127,18 @@
 
 (require 'company-english-helper)
 
-;; Yasnippet
+;; Yasnippet something must be decleared is that the deafult
+;; keybinding of yas-expand is <TAB> dont need to set another
+;; keybinding
 (require 'yasnippet)
 (yas-global-mode 1)
 
 ;; avy-flycheck
 (global-flycheck-mode)
 
+;; org-pomodoro
+(setq org-pomodoro-length '40)
+(require 'org-pomodoro)
 ;; posframe
 (require 'posframe)
 

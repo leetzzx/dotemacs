@@ -20,7 +20,7 @@
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-c y") 'ivy-yasnippet)
-(global-set-key (kbd "C-c u") 'yas-expand)
+;;(global-set-key (kbd "C-c u") 'yas-expand)
 (global-set-key (kbd "C-c e") 'toggle-company-english-helper)
 
 ;;(with-eval-after-load 'company
