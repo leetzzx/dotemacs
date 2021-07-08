@@ -17,7 +17,6 @@
 		      company-php
 		      company-c-headers
 		      company-ctags
-		      company-irony
 		      yasnippet
 		      yasnippet-snippets
 		      ivy-yasnippet
@@ -123,11 +122,9 @@
 (with-eval-after-load 'company
   (company-ctags-auto-setup))
 ;;(add-to-list 'company-backends 'company-irony)
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/company-english-helper"))
 (custom-set-variables
  '(company-c-headers-path-system
    '("/usr/include/" "/usr/local/include/" "/usr/include/c++/9/")))
-(require 'company-english-helper)
 
 ;; Yasnippet something must be decleared is that the deafult
 ;; keybinding of yas-expand is <TAB> dont need to set another
