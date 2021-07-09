@@ -22,6 +22,7 @@
 		      ivy-yasnippet
 		      ;; --- Better Editor ---
 		      markdown-mode
+		      bing-dict
 		      youdao-dictionary 
 		      org-pomodoro
 		      popwin
@@ -142,6 +143,14 @@
 (require 'org-pomodoro)
 ;; posframe
 (require 'posframe)
+
+;; bing dict
+(global-set-key (kbd "C-c d") 'bing-dict-brief)
+(setq bing-dict-vocabulary-save t)
+(setq bing-dict-vocabulary-file "~/Org/vocabulary.org")
+(require 'bing-dict)
+
+
 
 ;; elfeed
 (require 'elfeed)

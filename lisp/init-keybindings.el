@@ -1,6 +1,8 @@
 ;;; package --- Summary
 ;;; Commentary:
 ;;; Code:
+(global-set-key (kbd "C-c w") 'elfeed)
+(global-set-key (kbd "C-c u") 'elfeed-update)
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 (global-set-key (kbd "C-c v") 'youdao-dictionary-search-at-point+)
 (global-set-key (kbd "C-c g") 'magit-status)
