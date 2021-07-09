@@ -27,6 +27,7 @@
 		      popwin
 		      magit
 		      swiper
+		      elfeed
 		      counsel
 		      iedit
 		      posframe
@@ -142,6 +143,11 @@
 ;; posframe
 (require 'posframe)
 
+;; elfeed
+(require 'elfeed)
+(setq elfeed-feeds
+      '("http://nullprogram.com/feed/"
+        "http://www.terminally-incoherent.com/blog/feed/"))
 (provide 'init-packages)
 
 
