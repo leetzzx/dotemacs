@@ -30,6 +30,7 @@
 		      counsel
 		      iedit
 		      posframe
+		      irony
 		      avy-flycheck
 		      smartparens
 		      expand-region
