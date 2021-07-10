@@ -27,6 +27,7 @@
 		      org-pomodoro
 		      popwin
 		      magit
+		      bbyac
 		      swiper
 		      elfeed
 		      counsel
@@ -150,7 +151,9 @@
 (setq bing-dict-vocabulary-file "~/Org/vocabulary.org")
 (require 'bing-dict)
 
-
+;; bbyac
+(require 'bbyac)
+(bbyac-global-mode 1)
 
 ;; elfeed
 (require 'elfeed)
