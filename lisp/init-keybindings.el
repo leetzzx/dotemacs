@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 (global-set-key (kbd "C-c w") 'elfeed)
+(global-set-key (kbd "C-c e") 'eshell)
 (global-set-key (kbd "C-c u") 'elfeed-update)
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 (global-set-key (kbd "C-c v") 'youdao-dictionary-search-at-point+)
@@ -17,7 +18,6 @@
 (global-set-key (kbd "C-h C-f") 'find-function)
 (global-set-key (kbd "C-c p") #'avy-flycheck-goto-error)
 (global-set-key (kbd "C-h C-v") 'find-variable)
-(global-set-key (kbd "<f7>") 'open-my-GTD-file)
 (global-set-key (kbd "<f5>") 'init-file)
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 (global-set-key (kbd "C-=") 'er/expand-region)

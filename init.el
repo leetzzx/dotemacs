@@ -16,10 +16,16 @@
   (find-file "~/.emacs.d/init.el"))
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 
+(defun open-my-rw-file()
+  (interactive)
+  (find-file-read-only "~/Org/vocabulary.org"))
+(global-set-key (kbd "<f8>") 'open-my-rw-file)
+
+
 (defun open-my-GTD-file()
   (interactive)
   (find-file "~/Org/GTD.org"))
-(global-set-key (kbd "C-c t") 'open-my-GTD-file)
+(global-set-key (kbd "<f7>") 'open-my-GTD-file)
 
 (defun init-file()
   (interactive)
