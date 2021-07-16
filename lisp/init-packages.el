@@ -158,8 +158,10 @@
 ;; elfeed
 (require 'elfeed)
 (setq elfeed-feeds
-      '("http://nullprogram.com/feed/"
-        "http://www.terminally-incoherent.com/blog/feed/"))
+      '(("http://nullprogram.com/feed/" blog emacs)
+        "http://www.terminally-incoherent.com/blog/feed/"
+	("https://planet.emacslife.com/atom.xml" emacs life)
+	))
 (provide 'init-packages)
 
 
