@@ -1,8 +1,9 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
-  (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-			   ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))))
+   (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+                           ("melpa" . "http://elpa.emacs-china.org/melpa/")))
+			   )
 
 ;; 注意 elpa.emacs-china.org 是 Emacs China 中文社区在国内搭建的一个 ELPA 镜像
 (require 'cl-lib)
@@ -13,12 +14,14 @@
 		      request
 		      monokai-theme
 		      company
+		      company-ghci
 		      company-web
 		      company-php
 		      company-c-headers
 		      company-ctags
 		      yasnippet
 		      yasnippet-snippets
+		      haskell-snippets
 		      ;; --- Better Editor ---
 		      markdown-mode
 		      bing-dict
@@ -34,11 +37,13 @@
 		      posframe
 		      irony
 		      avy-flycheck
+		      flycheck-haskell
 		      smartparens
 		      expand-region
 		      ;; --- Major Mode ---
 		      web-mode
 		      js2-refactor
+		      haskell-mode
 		      js2-mode
 		      php-mode
 		      ;; --- Minor Mode ---
@@ -161,6 +166,13 @@
         "http://www.terminally-incoherent.com/blog/feed/"
 	("https://planet.emacslife.com/atom.xml" emacs life)
 	))
+(require 'haskell-snippets)
+(require 'company-ghci)
+(push 'company-ghci company-backends)
+(add-hook 'haskell-mode-hook 'company-mode)
+;;; To get completions in the REPL
+(add-hook 'haskell-interactive-mode-hook 'company-mode)
+(add-hook 'haskell-mode-hook #'flycheck-haskell-setup)
 (provide 'init-packages)
 
 
