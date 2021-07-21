@@ -19,7 +19,6 @@
 		      company-ctags
 		      yasnippet
 		      yasnippet-snippets
-		      ivy-yasnippet
 		      ;; --- Better Editor ---
 		      markdown-mode
 		      bing-dict
