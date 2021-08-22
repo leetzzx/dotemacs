@@ -1,6 +1,7 @@
 ;;; package --- Summary
 ;;; Commentary:
 ;;; Code:
+(global-set-key (kbd "C-c y") 'company-yasnippet)
 (global-set-key (kbd "C-c w") 'elfeed)
 (global-set-key (kbd "C-c e") 'eshell)
 (global-set-key (kbd "C-c u") 'elfeed-update)

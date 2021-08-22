@@ -18,7 +18,7 @@
 
 (defun open-my-rw-file()
   (interactive)
-  (find-file-read-only "~/Org/vocabulary.org"))
+  (find-file "~/Org/vocabulary.org"))
 (global-set-key (kbd "<f8>") 'open-my-rw-file)
 
 
