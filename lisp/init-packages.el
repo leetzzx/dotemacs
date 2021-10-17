@@ -16,6 +16,7 @@
 		      company
 		      company-ghci
 		      company-web
+		      company-lua
 		      company-php
 		      company-c-headers
 		      company-ctags
@@ -121,6 +122,7 @@
 (add-to-list 'company-backends 'company-web-html)
 (add-to-list 'company-backends 'company-web-jade)
 (add-to-list 'company-backends 'company-web-slim)
+(add-to-list 'company-backends 'company-lua)
 
 ;; c completion
 (add-to-list 'company-backends 'company-c-headers)
