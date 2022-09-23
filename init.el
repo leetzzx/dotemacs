@@ -49,6 +49,7 @@
 
 ;; company mode
 (global-company-mode t)
+(push 'company-prescient company-backends)
 
 ;; smartparens mode
 (smartparens-global-mode t)
