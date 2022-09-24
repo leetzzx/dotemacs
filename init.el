@@ -2,14 +2,18 @@
 (add-to-list 'default-frame-alist
              '(font . "Source Code Pro-14"))
 (scroll-bar-mode -1)
-
 (setq inhibit-splash-screen t)
-
+(global-linum-mode t)
 (defun open-my-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
 (global-set-key (kbd "<f2>") 'open-my-init-file)
+
+(defun open-my-gtd-file()
+  (interactive)
+  (find-file "~/Org/GTD.org"))
+(global-set-key (kbd "<f7>") 'open-my-gtd-file)
 
 
 (defun init-file()
@@ -18,6 +22,7 @@
 
 (global-set-key (kbd "<f5>") 'init-file)
 ;; better default
+(setq auto-save-default nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 (require 'recentf)
 (recentf-mode 1)
@@ -32,12 +37,16 @@
 				  company
 				  smartparens
 				  evil
+				  doom-modeline
 				  which-key
 				  terminal-here
 				  expand-region
 				  swiper
 				  iedit
 				  monokai-theme
+				  org-roam
+				  magit
+				  fzf
 				  bbyac
 				  dashboard
 				  counsel
@@ -56,9 +65,7 @@
 
 ;; iedit-mode
 (global-set-key (kbd "M-s e") 'iedit-mode)
-
-;; expand region
-(global-set-key (kbd "C-=") 'er/expand-region)
+;; expand region (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; monokai theme
 (load-theme 'monokai 1)
@@ -82,8 +89,8 @@
 (global-set-key (kbd "M-o") 'ace-window)
 
 ;; evil mode
-(require 'evil)
-(evil-mode 1)
+;;(require 'evil)
+;;(evil-mode 1)
 
 ;; which key
 (require 'which-key)
@@ -91,6 +98,11 @@
 
 ;; terminal here
 (require 'terminal-here)
+
+;; doom mode line
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+
 (global-set-key (kbd "M-=") #'terminal-here-launch)
 (custom-set-variables
  '(company-idle-delay 0.08)
@@ -106,3 +118,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; org-mode
+(setq org-agenda-files '("~/Org/GTD.org"))
+
+(global-set-key (kbd "C-c a") 'org-agenda)
