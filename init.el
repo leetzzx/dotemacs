@@ -1,4 +1,4 @@
-;;  define ui setting and function 
+;;  define ui setting and function
 (add-to-list 'default-frame-alist
              '(font . "Source Code Pro-14"))
 (scroll-bar-mode -1)
@@ -7,7 +7,9 @@
 (defun open-my-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
-
+;; cnfonts
+(require 'cnfonts)
+(cnfonts-mode 1)
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 
 (defun open-my-gtd-file()
@@ -46,6 +48,7 @@
 				  monokai-theme
 				  org-roam
 				  magit
+				  cnfonts
 				  fzf
 				  bbyac
 				  dashboard
@@ -121,5 +124,5 @@
 
 ;; org-mode
 (setq org-agenda-files '("~/Org/GTD.org"))
-
+(require 'org-tempo)
 (global-set-key (kbd "C-c a") 'org-agenda)
