@@ -1,6 +1,6 @@
 ;;  define ui setting and function
 (add-to-list 'default-frame-alist
-             '(font . "Source Code Pro-14"))
+             '(font . "Source Code Pro-15"))
 (scroll-bar-mode -1)
 (setq inhibit-splash-screen t)
 (global-linum-mode t)
@@ -38,6 +38,7 @@
 (setq package-selected-packages '(
 				  company
 				  smartparens
+				  sly
 				  evil
 				  doom-modeline
 				  which-key
@@ -61,14 +62,14 @@
 
 ;; company mode
 (global-company-mode t)
-(push 'company-prescient company-backends)
-
+(add-hook 'sly-mrepl-mode-hook #'company-mode)
 ;; smartparens mode
 (smartparens-global-mode t)
 
 ;; iedit-mode
 (global-set-key (kbd "M-s e") 'iedit-mode)
-;; expand region (global-set-key (kbd "C-=") 'er/expand-region)
+;; expand region
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; monokai theme
 (load-theme 'monokai 1)
@@ -126,3 +127,8 @@
 (setq org-agenda-files '("~/Org/GTD.org"))
 (require 'org-tempo)
 (global-set-key (kbd "C-c a") 'org-agenda)
+
+;; sly-mode
+(require 'sly)
+(setq inferior-lisp-program "/usr/bin/sbcl")
+(add-hook 'lisp-mode-hook 'company-mode)
