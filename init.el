@@ -1,3 +1,9 @@
+(setq gc-cons-threshold most-positive-fixnum)
+
+;; Lower threshold back to 8 MiB (default is 800kB)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq gc-cons-threshold (expt 2 23))))
 (eval-when-compile (require 'use-package))
 (eval-and-compile
   (setq use-package-always-defer t)
@@ -172,8 +178,8 @@
   :bind ("C-c y" . 'company-yasnippet)
   )
 ;; all the icons
-(when (display-graphic-p)
-  (use-package all-the-icons))
+;;(when (display-graphic-p)
+(use-package all-the-icons)
 
 ;; haskell-mode
 (use-package lsp-haskell)
