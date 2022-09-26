@@ -37,6 +37,7 @@
 (require 'cl-lib)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (setq package-selected-packages '(
+				  doom-modeline
 				  company
 				  undo-tree
 				  yasnippet
@@ -161,3 +162,6 @@
 ;; web mode
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 (add-hook 'web-mode-hook #'lsp)
+
+;; doom modeline
+(doom-modeline-mode 1)
