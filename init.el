@@ -85,13 +85,12 @@
 
 ;; company mode
 (use-package company
-  :hook (after-init . global-company-mode))
-;;(global-company-mode t)
+  :hook (after-init . global-company-mode)
+  )
+
 (add-hook 'sly-mrepl-mode-hook #'company-mode)
-;
-; smartparens mode
-;; (use-package smartparens
-;;   :init (smartparens-global-mode t))
+
+;; smartparens mode
 (use-package smartparens
   :hook (after-init . smartparens-global-mode))
 
