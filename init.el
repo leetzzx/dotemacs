@@ -53,6 +53,7 @@
 				  terminal-here
 				  expand-region
 				  swiper
+				  web-mode
 				  iedit
 				  monokai-theme
 				  org-roam
@@ -156,3 +157,7 @@
 (require 'lsp-haskell)
 (add-hook 'haskell-mode-hook #'lsp)
 (add-hook 'haskell-literate-mode-hook #'lsp)
+
+;; web mode
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
+(add-hook 'web-mode-hook #'lsp)
