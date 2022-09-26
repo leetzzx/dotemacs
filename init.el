@@ -80,13 +80,20 @@
 ;; package install keybindings
 (global-set-key (kbd "<f6>") 'package-install-selected-packages)
 
+
+;; benchmark init
+
 ;; company mode
-(global-company-mode t)
+(use-package company
+  :hook (after-init . global-company-mode))
+;;(global-company-mode t)
 (add-hook 'sly-mrepl-mode-hook #'company-mode)
 ;
 ; smartparens mode
+;; (use-package smartparens
+;;   :init (smartparens-global-mode t))
 (use-package smartparens
-  :init (smartparens-global-mode t))
+  :hook (after-init . smartparens-global-mode))
 
 
 ;; iedit-mode
@@ -99,7 +106,7 @@
 
 ;; dashboard
 (use-package dashboard
-  :init (dashboard-setup-startup-hook))
+  :hook (after-init  . dashboard-setup-startup-hook))
 
 
 ;; counsel
@@ -110,7 +117,7 @@
 
 ;; bbyac
 (use-package bbyac
-  :init (bbyac-global-mode 1))
+  :hook (after-init . bbyac-global-mode))
 
 
 ;; swiper
@@ -124,7 +131,7 @@
 
 ;; which key
 (use-package which-key
-  :init (which-key-mode))
+  :hook (after-init . which-key-mode))
 
 ;; terminal here
 (use-package terminal-here
@@ -162,12 +169,12 @@
 
 ;; yasnippet-mode
 (use-package yasnippet
-  :init (yas-global-mode 1)
-  :bind ("C-c y" . 'company-yasnippet))
-
+  :hook (after-init . yas-global-mode)
+  :bind ("C-c y" . 'company-yasnippet)
+  )
 ;; all the icons
 (when (display-graphic-p)
-  (require 'all-the-icons))
+  (use-package all-the-icons))
 
 ;; haskell-mode
 (use-package lsp-haskell)
@@ -179,6 +186,5 @@
 (add-hook 'web-mode-hook #'lsp)
 
 ;; doom modeline
-(doom-modeline-mode 1)
-
-
+(use-package doom-modeline
+  :hook (after-init . doom-modeline-mode))
