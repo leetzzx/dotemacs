@@ -43,7 +43,6 @@
 				  lsp-mode
 				  js2-mode
 				  evil
-				  doom-modeline
 				  which-key
 				  terminal-here
 				  expand-region
@@ -106,10 +105,7 @@
 ;; terminal here
 (require 'terminal-here)
 
-;; doom mode line
-(require 'doom-modeline)
-(doom-modeline-mode 1)
-
+;; terminal
 (global-set-key (kbd "M-=") #'terminal-here-launch)
 (custom-set-variables
  '(company-idle-delay 0.08)
