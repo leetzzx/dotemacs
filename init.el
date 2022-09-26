@@ -43,7 +43,9 @@
 				  smartparens
 				  sly
 				  lsp-mode
+				  lsp-haskell
 				  js2-mode
+				  haskell-mode
 				  all-the-icons
 				  evil
 				  which-key
@@ -147,3 +149,8 @@
 ;; all the icons
 (when (display-graphic-p)
   (require 'all-the-icons))
+
+;; haskell-mode
+(require 'lsp-haskell)
+(add-hook 'haskell-mode-hook #'lsp)
+(add-hook 'haskell-literate-mode-hook #'lsp)
