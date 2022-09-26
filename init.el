@@ -38,6 +38,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (setq package-selected-packages '(
 				  company
+				  undo-tree
 				  yasnippet
 				  yasnippet-snippets
 				  smartparens
@@ -119,6 +120,7 @@
  ;; If there is more than one, they won't work right.
  '(company-idle-delay 0.08)
  '(company-minimum-prefix-length 2)
+ '(lsp-enable-indentation nil)
  '(warning-suppress-types '(((tar link)) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
