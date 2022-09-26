@@ -17,8 +17,9 @@
   (find-file "~/.emacs.d/init.el"))
 
 ;; cnfonts
-(use-package cnfonts
-  :init (cnfonts-mode 1))
+;; (use-package cnfonts
+;;   :init (cnfonts-mode 1))
+
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 
 (defun open-my-gtd-file()
@@ -35,10 +36,11 @@
 ;; better default
 (setq auto-save-default nil)
 (fset 'yes-or-no-p 'y-or-n-p)
-(require 'recentf)
-(recentf-mode 1)
 
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+;; (require 'recentf)
+;; (recentf-mode 1)
+
+;; (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 ;; package settings
 (require 'package)
@@ -58,7 +60,6 @@
 				  js2-mode
 				  haskell-mode
 				  all-the-icons
-				  evil
 				  which-key
 				  terminal-here
 				  expand-region
@@ -82,8 +83,11 @@
 ;; company mode
 (global-company-mode t)
 (add-hook 'sly-mrepl-mode-hook #'company-mode)
-;; smartparens mode
-(smartparens-global-mode t)
+;
+; smartparens mode
+(use-package smartparens
+  :init (smartparens-global-mode t))
+
 
 ;; iedit-mode
 (global-set-key (kbd "M-s e") 'iedit-mode)
@@ -94,16 +98,20 @@
 (load-theme 'monokai 1)
 
 ;; dashboard
-(require 'dashboard)
-(dashboard-setup-startup-hook)
+(use-package dashboard
+  :init (dashboard-setup-startup-hook))
+
 
 ;; counsel
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(use-package counsel
+  :bind ("M-x" . 'counsel-M-x)
+  ("C-x C-f" . 'counsel-find-file)
+  )
 
 ;; bbyac
-(require 'bbyac)
-(bbyac-global-mode 1)
+(use-package bbyac
+  :init (bbyac-global-mode 1))
+
 
 ;; swiper
 (use-package swiper
@@ -113,10 +121,6 @@
 ;; acw window
 (use-package ace-window
   :bind ("M-o" . 'ace-window))
-
-;; evil mode
-;;(require 'evil)
-;;(evil-mode 1)
 
 ;; which key
 (use-package which-key
@@ -157,9 +161,9 @@
 (add-hook 'js2-mode-hook #'lsp)
 
 ;; yasnippet-mode
-(require 'yasnippet)
-(yas-global-mode 1)
-(global-set-key (kbd "C-c y") 'company-yasnippet)
+(use-package yasnippet
+  :init (yas-global-mode 1)
+  :bind ("C-c y" . 'company-yasnippet))
 
 ;; all the icons
 (when (display-graphic-p)
@@ -176,3 +180,5 @@
 
 ;; doom modeline
 (doom-modeline-mode 1)
+
+
