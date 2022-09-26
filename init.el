@@ -50,7 +50,7 @@
 
 ;; package settings
 (require 'package)
-(require 'cl-lib)
+;;(require 'cl-lib)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (setq package-selected-packages '(
 				  doom-modeline
