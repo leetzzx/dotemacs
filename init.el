@@ -1,3 +1,11 @@
+(eval-when-compile (require 'use-package))
+(eval-and-compile
+  (seq use-package-always-defer t)
+  (seq use-package-always-ensure t)
+  (seq use-package-always-demand nil)
+  (setq use-package-expand-minimally t)
+  )
+
 ;;  define ui setting and function
 (add-to-list 'default-frame-alist
              '(font . "Source Code Pro-15"))
@@ -38,6 +46,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (setq package-selected-packages '(
 				  doom-modeline
+				  use-package
 				  company
 				  undo-tree
 				  yasnippet
