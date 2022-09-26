@@ -17,8 +17,8 @@
   (find-file "~/.emacs.d/init.el"))
 
 ;; cnfonts
-(require 'cnfonts)
-(cnfonts-mode 1)
+(use-package cnfonts
+  :init (cnfonts-mode 1))
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 
 (defun open-my-gtd-file()
@@ -106,24 +106,26 @@
 (bbyac-global-mode 1)
 
 ;; swiper
-(global-set-key (kbd "C-s") 'swiper)
+(use-package swiper
+  :bind ("C-s" . 'swiper)
+  )
 
 ;; acw window
-(global-set-key (kbd "M-o") 'ace-window)
+(use-package ace-window
+  :bind ("M-o" . 'ace-window))
 
 ;; evil mode
 ;;(require 'evil)
 ;;(evil-mode 1)
 
 ;; which key
-(require 'which-key)
-(which-key-mode)
+(use-package which-key
+  :init (which-key-mode))
 
 ;; terminal here
-(require 'terminal-here)
+(use-package terminal-here
+  :bind ("M-=" . #'terminal-here-launch))
 
-;; terminal
-(global-set-key (kbd "M-=") #'terminal-here-launch)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -146,8 +148,8 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; sly-mode
-(require 'sly)
-(setq inferior-lisp-program "/usr/bin/sbcl")
+(use-package sly
+  :init (setq inferior-lisp-program "/usr/bin/sbcl"))
 (add-hook 'lisp-mode-hook 'company-mode)
 
 ;; js2-mode
@@ -164,7 +166,7 @@
   (require 'all-the-icons))
 
 ;; haskell-mode
-(require 'lsp-haskell)
+(use-package lsp-haskell)
 (add-hook 'haskell-mode-hook #'lsp)
 (add-hook 'haskell-literate-mode-hook #'lsp)
 
