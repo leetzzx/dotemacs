@@ -38,10 +38,13 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (setq package-selected-packages '(
 				  company
+				  yasnippet
+				  yasnippet-snippets
 				  smartparens
 				  sly
 				  lsp-mode
 				  js2-mode
+				  all-the-icons
 				  evil
 				  which-key
 				  terminal-here
@@ -108,13 +111,13 @@
 ;; terminal
 (global-set-key (kbd "M-=") #'terminal-here-launch)
 (custom-set-variables
- '(company-idle-delay 0.08)
- '(company-minimum-prefix-length 2)
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(warning-suppress-types '((comp))))
+ '(company-idle-delay 0.08)
+ '(company-minimum-prefix-length 2)
+ '(warning-suppress-types '(((tar link)) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -135,3 +138,12 @@
 ;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js2-mode-hook #'lsp)
+
+;; yasnippet-mode
+(require 'yasnippet)
+(yas-global-mode 1)
+(global-set-key (kbd "C-c y") 'company-yasnippet)
+
+;; all the icons
+(when (display-graphic-p)
+  (require 'all-the-icons))
