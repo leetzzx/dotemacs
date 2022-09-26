@@ -7,6 +7,7 @@
 (defun open-my-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
+
 ;; cnfonts
 (require 'cnfonts)
 (cnfonts-mode 1)
@@ -39,6 +40,8 @@
 				  company
 				  smartparens
 				  sly
+				  lsp-mode
+				  js2-mode
 				  evil
 				  doom-modeline
 				  which-key
@@ -132,3 +135,7 @@
 (require 'sly)
 (setq inferior-lisp-program "/usr/bin/sbcl")
 (add-hook 'lisp-mode-hook 'company-mode)
+
+;; js2-mode
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-hook 'js2-mode-hook #'lsp)
