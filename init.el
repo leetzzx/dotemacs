@@ -31,6 +31,7 @@
 (defun open-my-gtd-file()
   (interactive)
   (find-file "~/Org/GTD.org"))
+
 (global-set-key (kbd "<f7>") 'open-my-gtd-file)
 
 
