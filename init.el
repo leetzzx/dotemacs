@@ -23,8 +23,8 @@
   (find-file "~/.emacs.d/init.el"))
 
 ;; cnfonts
-;; (use-package cnfonts
-;;   :init (cnfonts-mode 1))
+ (use-package cnfonts
+   :init (cnfonts-mode 1))
 
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 
