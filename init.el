@@ -62,6 +62,7 @@
 				  yasnippet
 				  yasnippet-snippets
 				  smartparens
+				  olivetti
 				  sly
 				  emmet-mode
 				  lsp-mode
@@ -204,3 +205,8 @@
    (add-hook 'html-mode-hook 'emmet-mode)
    (add-hook 'css-mode-hook  'emmet-mode)
 )
+
+;; olivetti
+(use-package olivetti
+  :bind ("C-c C-o" . 'olivetti-mode))
+
