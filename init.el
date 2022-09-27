@@ -57,11 +57,13 @@
 				  doom-modeline
 				  use-package
 				  company
+				  company-web
 				  undo-tree
 				  yasnippet
 				  yasnippet-snippets
 				  smartparens
 				  sly
+				  emmet-mode
 				  lsp-mode
 				  lsp-haskell
 				  js2-mode
@@ -87,13 +89,14 @@
 ;; package install keybindings
 (global-set-key (kbd "<f6>") 'package-install-selected-packages)
 
-
-;; benchmark init
-
 ;; company mode
 (use-package company
   :hook (after-init . global-company-mode)
+  :config  (add-to-list 'company-backends 'company-web-html)
+  (add-to-list 'company-backends 'company-web-jade)
+  (add-to-list 'company-backends 'company-web-slim)
   )
+
 
 (add-hook 'sly-mrepl-mode-hook #'company-mode)
 
@@ -194,3 +197,10 @@
 ;; doom modeline
 (use-package doom-modeline
   :hook (after-init . doom-modeline-mode))
+
+;; emmet mode
+(use-package emmet-mode
+  :init (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+   (add-hook 'html-mode-hook 'emmet-mode)
+   (add-hook 'css-mode-hook  'emmet-mode)
+)
