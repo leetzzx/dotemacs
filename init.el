@@ -54,37 +54,40 @@
 ;;(require 'cl-lib)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (setq package-selected-packages '(
-				  doom-modeline
-				  use-package
-				  company
-				  company-web
-				  undo-tree
-				  yasnippet
-				  yasnippet-snippets
-				  smartparens
-				  olivetti
-				  sly
-				  emmet-mode
-				  lsp-mode
-				  lsp-haskell
-				  js2-mode
-				  haskell-mode
+				  ;; ui
 				  all-the-icons
 				  which-key
-				  terminal-here
-				  expand-region
-				  swiper
-				  web-mode
-				  iedit
-				  monokai-theme
-				  org-roam
-				  magit
+				  doom-modeline
 				  cnfonts
-				  fzf
-				  bbyac
 				  dashboard
+				  monokai-theme
+				  ;; tools
+				  use-package
+				  magit
 				  counsel
 				  ace-window
+				  terminal-here
+				  iedit
+				  swiper				  
+				  fzf
+				  expand-region
+				  org-roam
+				  bbyac
+				  ;; minor mode
+				  smartparens
+				  olivetti
+				  yasnippet
+				  yasnippet-snippets
+				  emmet-mode
+				  ;; major mode
+				  company
+				  company-web
+				  lsp-mode
+				  lsp-haskell
+				  sly
+				  js2-mode
+				  haskell-mode
+				  web-mode
 				  )) 
 
 ;; package install keybindings
@@ -102,9 +105,9 @@
 (add-hook 'sly-mrepl-mode-hook #'company-mode)
 
 ;; smartparens mode
-(use-package smartparens
-  :hook (after-init . smartparens-global-mode))
-
+(require 'smartparens)
+(smartparens-global-mode t)
+(sp-local-pair '(emacs-lisp-mode lisp-interaction-mode) "'" nil :actions nil)
 
 ;; iedit-mode
 (global-set-key (kbd "M-s e") 'iedit-mode)
